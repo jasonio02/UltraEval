@@ -22,6 +22,7 @@ def convert(input_file_path, output_file_path):
 
 
 def main():
+    print("ALOHA MY FRIEND")
     script_dir = os.path.dirname(os.path.realpath(__file__))
     input_path = "../../RawData/gsm8k/test.jsonl"
     output_path = "./data/gsm8k.jsonl"
