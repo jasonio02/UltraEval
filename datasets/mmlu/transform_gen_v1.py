@@ -3,9 +3,7 @@ import random
 
 def transform(data, num_sample: int, r: random.Random, dataset_name: str):
     question = f"Question:\n{data['question']}\n"
-    instruction = f'Requirement:\n This is a question about {data["subject"]} Please think step by step then choose and respond with the letter of the correct answer, including the parentheses. For example:
-    Find the degree for the given field extension Q(sqrt(2), sqrt(3), sqrt(18)) over Q. The Options are 0, 4, 2, 6. Answer: "0"
-    \n'
+    instruction = f"Requirement:\n This is a question about {data["subject"]} Please think step by step then choose and respond with the letter of the correct answer, including the parentheses.\n"
     options = "Options:\n"
     for idx, item in enumerate(data["target_scores"].keys()):
         options += f"({chr(65 + idx)}) {item}\n"
