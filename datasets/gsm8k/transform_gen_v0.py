@@ -11,12 +11,14 @@ Answer1: Half of the number of Randy's mango trees is 60/2 = <<60/2=30>>30 trees
 
 
 def transform(data, num_sample: int, r: random.Random, dataset_name: str):
-    text = "Question: {data['question']}\nAnswer: "
+    text = "Question: {data['question']}\n"
     correct_answer = data["answer"]
 
     regex_expressions = re.findall(r'\b\d+\s*[\+\-\*/]\s*\d+(\s*[\+\-\*/]\s*\d+)*', data['question'])
     if regex_expressions:
         text += f"'\nMath Expressions:{','.join(regex_expressions)}\n"
+    
+    text += "Answer: "
 
     gsm8kp = GSM8KPost()
     _, processed_correct_answer = gsm8kp([], correct_answer)
